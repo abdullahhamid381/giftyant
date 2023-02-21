@@ -1,0 +1,14 @@
+.product-page-grid{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    width: 80%;
+    align-items: center;
+    padding: 120px 0;
+    margin: auto;
+    .basket{
+        img{
+            width: 100%;
+            margin-left: 90px;
+        }
+    }
+}

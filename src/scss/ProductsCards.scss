@@ -1,0 +1,13 @@
+.product-card-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 20px;
+    .cards-parent{
+        width: 100%;
+        .card-gallery{
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
