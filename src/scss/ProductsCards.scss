@@ -1,13 +1,89 @@
-.product-card-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr ;
-    gap: 20px;
-    .cards-parent{
+.product-card-grid {
+
+    [data-rbd-droppable-context-id="0"] {
+        overflow-anchor: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+
+    .cards-parent {
         width: 100%;
-        .card-gallery{
-            img{
+        padding: 5px;
+        /* border: 1px solid #62d2a2; */
+        border-radius: 5px;
+        box-shadow: 0px 0px 7px -3px black;
+
+
+        .card-gallery {
+            img {
                 width: 100%;
             }
+        }
+
+        .card-detail {
+            font-family: 'Raleway', sans-serif;
+
+            h3 {
+
+                font-family: 'Raleway', sans-serif;
+                padding: 10px 0;
+            }
+
+            .gender {
+                font-family: 'Raleway', sans-serif;
+                font-weight: 400;
+            }
+
+            .price-parent {
+                padding: 10px;
+
+                .price {
+                    color: #62d2a2;
+                    font-weight: bolder;
+                    padding-left: 5px;
+                }
+            }
+            .stars{
+                padding-top: 10px;
+            }
+
+
+            .button-flex {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                justify-content: center;
+
+                .add-to-cart {
+                    width: 60%;
+                   
+                    font-size: 15px;
+                    background: none;
+                    border: none;
+                    background: #62d2a2;
+                    font-family: 'Raleway', sans-serif;
+                    padding: 15px 0;
+                    color: white;
+                    font-weight: bolder;
+                }
+
+                .heart {
+                   
+                    width: 20%;
+                    border: none;
+                    background:  #62d2a2 !important;
+                    font-family: 'Raleway', sans-serif;
+                    padding: 15px 0;
+                    color: white;
+                    font-weight: bolder;
+
+                    background: none;
+                    font-size: 15px;
+                }
+
+            }
+
         }
     }
 }

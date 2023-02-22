@@ -16,6 +16,7 @@ import { EffectFade, Navigation, Pagination } from "swiper";
 export default function Slider() {
   return (
     <>
+    <div className="banner-slider">
       <Swiper
         spaceBetween={30}
         effect={"fade"}
@@ -45,6 +46,7 @@ export default function Slider() {
         </SwiperSlide>
       
       </Swiper>
+      </div>
     </>
   );
 }

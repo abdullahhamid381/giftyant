@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { ProductGalleryDetail } from './Data'
+import { AiOutlineHeart, AiOutlineEye } from 'react-icons/ai'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import ProductGallery from './ProductGallery'
 import '../scss/ProductsCards.scss'
@@ -58,13 +59,30 @@ const ProductCards = () => {
                                                         <img src="./images/Products/1.jpg" alt="" />
                                                     </div>
                                                     <div className='card-detail'>
-                                                        <h3>{productcards.title}</h3>
-                                                        <h3>{productcards.gender}</h3>
-                                                        <p>{productcards.Price}</p>
-                                                        <del>{productcards.discount}</del>
-                                                        <span>{productcards.stock}</span>
-                                                        <span>{productcards.star}</span>
-                                                        <button>{productcards.button}</button>
+                                                        <center>
+                                                            <h3>{productcards.title}</h3>
+                                                            <p className='gender'>{productcards.gender}</p>
+                                                            <div className='price-parent'>
+                                                                <del className='discount'> {productcards.discount} </del>
+                                                                <span className='price'> {productcards.Price} </span>
+                                                            </div>
+
+                                                            <span>{productcards.stock}</span>
+                                                            <br />
+                                                            <div className='stars'>
+                                                                <span>{productcards.star}</span>
+                                                                <span>{productcards.star}</span>
+                                                                <span>{productcards.star}</span>
+                                                                <span>{productcards.star}</span>
+                                                                <span>{productcards.star}</span>
+                                                            </div>
+                                                            <br />
+                                                            <div className='button-flex'>
+                                                                <button className='add-to-cart'>{productcards.button}</button>
+                                                                <button className='heart'><AiOutlineHeart /></button>
+                                                                <button className='heart'><AiOutlineEye /></button>
+                                                            </div>
+                                                        </center>
                                                     </div>
                                                 </div>
                                             )}

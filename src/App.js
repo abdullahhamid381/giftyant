@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import Accordian from './Components/Accordian'
 import Banner from './Components/Banner'
 import Facility from './Components/Facility'
 import Navbar from './Components/Navbar'
@@ -7,6 +8,7 @@ import ProductGallery from './Components/ProductGallery'
 import ProductPage from './Components/ProductPage'
 import ProductsFilter from './Components/ProductsFilter'
 import SubNavbar from './Components/SubNavbar'
+import WhyChoose from './Components/WhyChoose'
 import Slider from './Reuseable/Slider'
 
 const App = () => {
@@ -18,6 +20,7 @@ const App = () => {
       <Facility />
       <ProductsFilter />
     <ProductPage/>
+  <WhyChoose/>
     </Fragment>
   )
 }
