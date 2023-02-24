@@ -5,7 +5,7 @@ import '../scss/ProductPage.scss'
 const ProductPage = () => {
   return (
  <Fragment>
-    <div className='product-page-grid'>
+    {/* <div className='product-page-grid'>
        <div>
        <ProductCards/>
        </div>
@@ -15,7 +15,7 @@ const ProductPage = () => {
         </div>
         
        </div>
-    </div>
+    </div> */}
  </Fragment>
   )
 }

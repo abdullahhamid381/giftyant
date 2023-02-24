@@ -17,6 +17,11 @@ export default function Accordian() {
 
       {/*------------------------- START HERE THIS SECTION OF ACCORDIAN ------------------------- */}
       <div>
+        <div>
+          <h1>
+            OUR <span style={{ borderBottom: '2px solid #62d2a2', paddingBottom: '10px' }}>PRO</span>DUCTS
+          </h1>
+        </div>
         {Accordian.map((Accordianmap) => {
           return (
             <div className="accordian">
@@ -36,8 +41,8 @@ export default function Accordian() {
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography className="accordian" style={{paddingLeft:"30px", marginTop: "-10px",opacity:'0.8'}}>
-                  {Accordianmap.description}
+                  <Typography className="accordian" style={{ paddingLeft: "30px", marginTop: "-10px", opacity: '0.8' }}>
+                    {Accordianmap.description}
                   </Typography>
                 </AccordionDetails>
               </Accordion>

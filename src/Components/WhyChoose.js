@@ -7,10 +7,11 @@ const WhyChoose = () => {
     <Fragment>
         <div className='why-choose-grid'>
          
-                <Accordian/>
+                {/* <Accordian/>
        
             
-                <Review/>
+                <Review/> */}
+                <img src={'./images/faq.png'} alt="" style={{width:'90%',margin:'auto'}} />
             
         </div>
     </Fragment>

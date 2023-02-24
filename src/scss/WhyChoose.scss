@@ -1,7 +1,12 @@
 .why-choose-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 90%;
-    margin: auto;
-    place-items: center;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
+    background: whitesmoke;
+    padding: 80px 0;
+    // width: 90%;
+    // margin: auto;
+    // place-items: center;
+    img{
+        margin-left: 80px !important;
+    }
 }

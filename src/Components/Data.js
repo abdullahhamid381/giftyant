@@ -2,8 +2,8 @@ import { FaPaperPlane } from 'react-icons/fa'
 import { BsCurrencyDollar } from 'react-icons/bs'
 import { GiCarWheel } from 'react-icons/gi'
 import { AiOutlineStar } from 'react-icons/ai'
-import { CiDeliveryTruck,CiMedal } from 'react-icons/ci'
-import { SlGraduation} from 'react-icons/sl'
+import { CiDeliveryTruck, CiMedal } from 'react-icons/ci'
+import { SlGraduation } from 'react-icons/sl'
 
 export const facility = [
   {
@@ -26,30 +26,9 @@ export const facility = [
 
 export const ProductGalleryDetail = [
   {
-
-    title: 'DRESS THE STILETTO',
-    gender: "Men's Fashion",
-    Price: '$315.00',
-    discount: '$500.00',
-    stock: 'In Stock',
-    star: <AiOutlineStar />,
-    button: 'Add To Cart',
-    id: "item-1",
-  },
-  {
-
-    title: 'DRESS THE STILETTO',
-    gender: "Men's Fashion",
-    Price: '$315.00',
-    discount: '$500.00',
-    stock: 'In Stock',
-    star: <AiOutlineStar />,
-    button: 'Add To Cart',
-    id: "item-2"
-  },
-  {
-
-    title: 'DRESS THE STILETTO',
+    cata: 'Perfume',
+    img:'./images/11.jpg',
+    title: 'Perfume',
     gender: "Men's Fashion",
     Price: '$315.00',
     discount: '$500.00',
@@ -59,8 +38,33 @@ export const ProductGalleryDetail = [
     id: "item-3"
   },
   {
-
-    title: 'DRESS THE STILETTO',
+    cata: 'Jewelery',
+    title: 'Jewelery',
+    img:'./images/12.jpg',
+    gender: "Men's Fashion",
+    Price: '$315.00',
+    discount: '$500.00',
+    stock: 'In Stock',
+    star: <AiOutlineStar />,
+    button: 'Add To Cart',
+    id: "item-4"
+  },
+  {
+    cata: 'Bags',
+    img:'./images/11.jpg',
+    title: 'Bags',
+    gender: "Men's Fashion",
+    Price: '$315.00',
+    discount: '$500.00',
+    stock: 'In Stock',
+    star: <AiOutlineStar />,
+    button: 'Add To Cart',
+    id: "item-3"
+  },
+  {
+    cata: 'Watches',
+    title: 'Watches',
+    img:'./images/12.jpg',
     gender: "Men's Fashion",
     Price: '$315.00',
     discount: '$500.00',
@@ -79,7 +83,7 @@ export const Accordiandata = [
       "This is our motto and we are experts in delivering the best 100% organic foods on the market. We work with more than 60 farms all over the country.Were a locally owned business with staff that has decades of experience in the field of health and firm roots in the health food industry.",
   },
   {
-    icon: <CiMedal/>,
+    icon: <CiMedal />,
     title: "Fast Free Delivery",
     description:
       "This is our motto and we are experts in delivering the best 100% organic foods on the market. We work with more than 60 farms all over the country.Were a locally owned business with staff that has decades of experience in the field of health and firm roots in the health food industry.",

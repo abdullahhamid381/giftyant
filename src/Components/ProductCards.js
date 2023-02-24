@@ -16,11 +16,11 @@ const reorder = (list, startindex, endindex) => {
     result.splice(endindex, 0, removed);
     return result;
 };
-const ProductCards = () => {
-    const [items, setItems] = useState([]);
+const ProductCards = ({Productdata,searchTwo,SetsearchTwo}) => {
+    const [Product, setProduct] = useState([]);
 
     useEffect(() => {
-        setItems(ProductGalleryDetail);
+        setProduct(ProductGalleryDetail);
     }, []);
 
 
@@ -28,9 +28,9 @@ const ProductCards = () => {
         if (!result.destination) {
             return;
         }
-        const reordereditems = reorder(items, result.source.index, result.destination.index);
+        const reordereditems = reorder(Product, result.source.index, result.destination.index);
         console.log(reorder);
-        setItems(reordereditems);
+        setProduct(reordereditems);
     }
 
 
@@ -47,7 +47,9 @@ const ProductCards = () => {
                             <div {...provided.droppableProps} ref={provided.innerRef}>
 
                                 {
-                                    items.map((productcards, index) => (
+                                    Productdata.filter((filterItem) =>
+                                    filterItem.title.toLowerCase().includes(searchTwo)
+                                ).map((productcards,index) => (
                                         <Draggable key={productcards.id} draggableId={productcards.id} index={index}>
                                             {(provided, snapshot) => (
                                                 <div className='cards-parent'
@@ -56,7 +58,7 @@ const ProductCards = () => {
                                                     {...provided.dragHandleProps}>
 
                                                     <div className='card-gallery'>
-                                                        <img src="./images/Products/1.jpg" alt="" />
+                                                        <img src={productcards.img} alt="" />
                                                     </div>
                                                     <div className='card-detail'>
                                                         <center>

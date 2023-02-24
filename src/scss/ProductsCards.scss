@@ -2,9 +2,13 @@
 
     [data-rbd-droppable-context-id="0"] {
         overflow-anchor: none;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 50px;
+    width: 80%;
+    margin: auto;
+    place-items: center;
+    padding: 120px 0;
     }
 
     .cards-parent {

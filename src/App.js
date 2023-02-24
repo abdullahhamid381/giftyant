@@ -19,7 +19,7 @@ const App = () => {
       <Slider />
       <Facility />
       <ProductsFilter />
-    <ProductPage/>
+    {/* <ProductPage/> */}
   <WhyChoose/>
     </Fragment>
   )
