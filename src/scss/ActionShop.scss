@@ -1,0 +1,12 @@
+.grid-action-shop{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .latest-product-parent{
+        img{
+            width: 100%;
+        }
+        .latest-product{
+            position: absolute;
+        }
+    }
+}

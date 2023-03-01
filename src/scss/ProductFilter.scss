@@ -1,11 +1,10 @@
 .product-filter {
   @import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Raleway:wght@700&display=swap");
   h1 {
-    font-family: "Berkshire Swash", cursive;
-    color: #333333;
-    font-size: 36px;
+    // font-family: "Berkshire Swash", cursive;
+    color: #444444;
     text-align: center;
-    padding: 80px 0;
+    padding: 80px 0 60px 0;
   }
 
   .filter-buttons {
@@ -20,8 +19,8 @@
       font-family: "Raleway", sans-serif;
     }
     button:focus {
-      border-bottom: 1px solid #62d2a2;
-      color: #62d2a2;
+      border-bottom: 1px solid red;
+      color: red;
       padding-bottom: 10px;
       font-weight: bolder;
       transition: 0.4s;

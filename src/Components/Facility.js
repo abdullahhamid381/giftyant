@@ -1,36 +1,30 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import '../scss/Facility.scss'
-import { FaPaperPlane } from 'react-icons/fa'
-import { BsCurrencyDollar } from 'react-icons/bs'
+import { FiTruck } from 'react-icons/fi'
 import { facility } from './Data'
 const Facility = () => {
     return (
-        <div className='facility-parent'>
-            <div className='grid'>
+        <Fragment>
 
-               {
-                facility.map((map)=>{
-                    return(
-                        <div className='freeshiping'>
-                        <div className='icons'>
-                            {map.icons}
-                        </div>
-                        <div>
-                            <h2> {map.h2}
-                               
-                            </h2>
-                            <p> {map.p}</p>
-                        </div>
-    
-                    </div>
-                    )
-                })
-               }
+            <div className='facility-grid'>
 
-               
+                {
+                    facility.map((curElem) => {
+                        return (
+                            <div className='facility-item'>
+                                <div className='icons'>
+                                    {curElem.icons}
+                                </div>
+                                <div>
+                                    <h6>{curElem.h2}</h6>
+                                    <p>{curElem.p}</p>
+                                </div>
+                            </div>
+                        )
+                    })
+                }
             </div>
-
-        </div>
+        </Fragment>
     )
 }
 

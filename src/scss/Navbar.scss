@@ -8,12 +8,14 @@
         align-items: center;
         padding: 40px 0 0 0;
 
+    
 
         @include lg {
             display: grid;
             grid-template-columns: 2rem 1fr 1fr 1fr 2rem;
             align-items: center;
             padding: 40px 0 0 0;
+            display: none;
         }
 
         .logo {
@@ -31,7 +33,7 @@
             }
 
             .color {
-                color: #62D2A2;
+                color: RED;
                 margin-left: 10px;
             }
         }

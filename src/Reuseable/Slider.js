@@ -29,21 +29,21 @@ export default function Slider() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src={'./images/banner3.jpg'} />
-          <div  className="bannerfirsttext">
+          <img src={'./images/final/slider1.png'} style={{cursor:'pointer'}}/>
+          {/* <div  className="bannerfirsttext">
             <h2>GREAT OFFERS ON DIFFERENT PRODUCTS NOW START THE SHOPPING</h2>
             <p>We Supply High Premium And Organic Products</p>
             <button>ORDER NOW </button>
-          </div>
+          </div> */}
         </SwiperSlide>
-        <SwiperSlide>
+        {/* <SwiperSlide>
         <img src={'./images/banner4.jpg'} />
         <div  className="bannerfirsttext">
             <h2> High Premium And Organic Products WE SELL WHAT'S GOOD FOR YOU</h2>
             <p>We Supply High Premium And Organic Products</p>
             <button>ORDER NOW </button>
           </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
       
       </Swiper>
       </div>

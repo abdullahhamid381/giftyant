@@ -4,22 +4,30 @@ import { GiCarWheel } from 'react-icons/gi'
 import { AiOutlineStar } from 'react-icons/ai'
 import { CiDeliveryTruck, CiMedal } from 'react-icons/ci'
 import { SlGraduation } from 'react-icons/sl'
+import { FiTruck } from 'react-icons/fi'
+import {CiDiscount1} from'react-icons/ci'
+import {MdOutlinePolicy} from 'react-icons/md'
 
 export const facility = [
   {
-    icons: <FaPaperPlane />,
-    h2: 'FREE SHIPPING',
-    p: 'free delivery on all orders over $99'
+    icons: <FiTruck />,
+    h2: 'Fast Delivery',
+    p: 'Free shipping on all order'
   },
   {
     icons: <BsCurrencyDollar />,
-    h2: 'FREE RETURN',
-    p: '30 days money back guarantee!'
+    h2: 'Money Return',
+    p: 'Back guarantee in 7 days'
   },
   {
-    icons: <GiCarWheel />,
-    h2: 'ONLINE SUPPORT 24/7',
-    p: 'we support online 24 hours a day'
+    icons: <CiDiscount1 />,
+    h2: 'Member Discount',
+    p: 'On every order over $130.00'
+  },
+  {
+    icons: <MdOutlinePolicy/>,
+    h2: 'Return Policy',
+    p: 'Support 24 hours a day'
   }
 ]
 
@@ -27,7 +35,7 @@ export const facility = [
 export const ProductGalleryDetail = [
   {
     cata: 'Perfume',
-    img:'./images/11.jpg',
+    img:'./images/final/6.jpg',
     title: 'Perfume',
     gender: "Men's Fashion",
     Price: '$315.00',
@@ -35,23 +43,25 @@ export const ProductGalleryDetail = [
     stock: 'In Stock',
     star: <AiOutlineStar />,
     button: 'Add To Cart',
-    id: "item-3"
+    id:1,
+    quantity:1
   },
   {
     cata: 'Jewelery',
     title: 'Jewelery',
-    img:'./images/12.jpg',
+    img:'./images/final/7.jpg',
     gender: "Men's Fashion",
     Price: '$315.00',
     discount: '$500.00',
     stock: 'In Stock',
     star: <AiOutlineStar />,
     button: 'Add To Cart',
-    id: "item-4"
+    id: 2,
+    quantity:1
   },
   {
     cata: 'Bags',
-    img:'./images/11.jpg',
+    img:'./images/final/8.jpg',
     title: 'Bags',
     gender: "Men's Fashion",
     Price: '$315.00',
@@ -59,19 +69,73 @@ export const ProductGalleryDetail = [
     stock: 'In Stock',
     star: <AiOutlineStar />,
     button: 'Add To Cart',
-    id: "item-3"
+    id: 3,
+    quantity:1
   },
   {
     cata: 'Watches',
-    title: 'Watches',
-    img:'./images/12.jpg',
+    title: 'AWOMEN BAG',
+    img:'./images/final/9.jpg',
     gender: "Men's Fashion",
     Price: '$315.00',
     discount: '$500.00',
     stock: 'In Stock',
     star: <AiOutlineStar />,
     button: 'Add To Cart',
-    id: "item-4"
+    id: 4,
+    quantity:1
+  },
+  {
+    cata: 'Perfume',
+    img:'./images/final/6.jpg',
+    title: 'Perfume',
+    gender: "Men's Fashion",
+    Price: '$315.00',
+    discount: '$500.00',
+    stock: 'In Stock',
+    star: <AiOutlineStar />,
+    button: 'Add To Cart',
+    id:1,
+    quantity:1
+  },
+  {
+    cata: 'Jewelery',
+    title: 'Jewelery',
+    img:'./images/final/7.jpg',
+    gender: "Men's Fashion",
+    Price: '$315.00',
+    discount: '$500.00',
+    stock: 'In Stock',
+    star: <AiOutlineStar />,
+    button: 'Add To Cart',
+    id: 2,
+    quantity:1
+  },
+  {
+    cata: 'Bags',
+    img:'./images/final/8.jpg',
+    title: 'Bags',
+    gender: "Men's Fashion",
+    Price: '$315.00',
+    discount: '$500.00',
+    stock: 'In Stock',
+    star: <AiOutlineStar />,
+    button: 'Add To Cart',
+    id: 3,
+    quantity:1
+  },
+  {
+    cata: 'Watches',
+    title: 'AWOMEN BAG',
+    img:'./images/final/9.jpg',
+    gender: "Men's Fashion",
+    Price: '$315.00',
+    discount: '$500.00',
+    stock: 'In Stock',
+    star: <AiOutlineStar />,
+    button: 'Add To Cart',
+    id: 4,
+    quantity:1
   },
 ]
 
