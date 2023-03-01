@@ -160,3 +160,21 @@ export const Accordiandata = [
   },
 
 ];
+
+export const blog=[
+  {
+    img:'./images/final/10.jpg',
+    h1:'LOREM IPSUM SIMPLY',
+    p:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed a accusantium tempora sapiente sunt rem odit asperiores dolor delectus iste.',
+  },
+  {
+    img:'./images/final/11.jpg',
+    h1:'LOREM IPSUM SIMPLY',
+    p:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed a accusantium tempora sapiente sunt rem odit asperiores dolor delectus iste.',
+  },
+  {
+    img:'./images/final/12.jpg',
+    h1:'LOREM IPSUM SIMPLY',
+    p:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed a accusantium tempora sapiente sunt rem odit asperiores dolor delectus iste.',
+  },
+]

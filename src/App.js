@@ -9,6 +9,7 @@ import Table from './Components/Table'
 import ActionShop from './Components/ActionShop'
 import PopularGifts from './Components/PopularGifts'
 import Footer from './Components/Footer'
+import Blog from './Components/Blog'
 const App = () => {
   return (
     <Fragment>
@@ -20,12 +21,14 @@ const App = () => {
         
       
      */}
-     {/* <Facility />
+     {/* 
      <ActionShop/> */}
 
 <Slider />
+<Facility />
 <PopularGifts/>
 <ContextProducts/> 
+<Blog/>
 <Footer/>
     </Fragment>
   )

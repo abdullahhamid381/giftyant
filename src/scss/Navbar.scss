@@ -1,5 +1,8 @@
 @import './media.scss';
-@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Raleway:wght@200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+body{
+    font-family: 'Roboto Condensed', sans-serif;
+}
 
 .navbar-parent {
     .grid {

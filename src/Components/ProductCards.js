@@ -4,7 +4,7 @@ import { AiOutlineHeart, AiOutlineEye, AiOutlinePlus, AiOutlineMinus, AiOutlineS
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import '../scss/ProductsCards.scss';
 import Navbar from '../Components/Navbar'
-
+import {Typography,Rating } from '@mui/material/'
 import { CardsProduct } from './ContextProducts'
 import Table from './Table'
 
@@ -13,128 +13,10 @@ import Table from './Table'
 
 
 
-// const ProductCards = ({ }) => {
-
-
-
-//     // IMPORTING CONTEXT API HERE
-
-//     //FOR THE MAP RUNNING IN THE PRODUCTSCARDS
-//     const { items } = useContext(CardsProduct)
-
-//     //FOR THE REMOVE THE ITEMS IN THE PRODUCTSCARDS
-//     const { removeitem } = useContext(CardsProduct)
-
-//     // THIS USED FOR THE CLEAR THE CART
-//     const { clearcart } = useContext(CardsProduct)
-
-//     const { increment } = useContext(CardsProduct)
-//     const { decrement } = useContext(CardsProduct)
-
-
-
-
-
-
-
-
-
-
-
-
-//     // useEffect(() => {
-//     //     setProduct(items);
-//     // }, []);
-//     // if (items.length === 0){
-//     //     return(
-//     //         <Fragment>
-//     //             <Navbar/>
-//     //         </Fragment>
-//     //     )
-//     // }
-
-
-
-
-
-
-
-
-//     return (
-//         <Fragment>
-//             <div className="product-card-grid">
-
-
-//                 {
-//                     items.map((productcards, index) => {
-//                         const { id, quantity } = productcards;
-//                         return (
-
-//                             <div className='cards-parent'>
-
-//                                 <div className='card-gallery'>
-//                                     <img src={productcards.img} alt="" />
-//                                 </div>
-//                                 <div className='card-detail'>
-//                                     <center>
-//                                         <h3>{productcards.title}</h3>
-//                                         <p className='gender'>{productcards.gender}</p>
-//                                         <div className='price-parent'>
-//                                             <del className='discount'> {productcards.discount} </del>
-//                                             <span className='price'> {productcards.Price} </span>
-//                                         </div>
-
-//                                         <span>{productcards.stock}</span>
-//                                         <br />
-//                                         <div className='stars'>
-//                                             <span>{productcards.star}</span>
-//                                             <span>{productcards.star}</span>
-//                                             <span>{productcards.star}</span>
-//                                             <span>{productcards.star}</span>
-//                                             <span>{productcards.star}</span>
-//                                         </div>
-//                                         <br />
-//                                         <div className='button-flex'>
-//                                             <button className='add-to-cart'>{productcards.button}</button>
-//                                             <button className='heart' onClick={() => increment(id)}><AiOutlinePlus /></button>
-//                                             <input type="text" placeholder={quantity} className="increment" />
-//                                             <button className='heart' onClick={() => decrement(id)}><AiOutlineMinus /></button>
-//                                             <button className='heart' onClick={() => removeitem(id)}>Remove</button>
-
-//                                         </div>
-//                                     </center>
-//                                 </div>
-
-//                             </div>
-
-
-
-//                         )
-
-//                     })
-//                 }
-
-//                 <div>
-
-//                 </div>
-
-//                 <div>
-//                     <button>Checkout</button>
-//                     <button onClick={() => clearcart()}>Clear All</button>
-//                 </div>
-
-//             </div>
-
-
-
-
-//         </Fragment >
-//     )
-// }
-
 
 
 const ProductCards = () => {
+    const[value,setValue] = useState([])
 
 
 
@@ -208,11 +90,15 @@ const ProductCards = () => {
                                                 </div>
 
                                                 <div className='stars'>
-                                                    <span>{productcards.star}</span>
-                                                    <span>{productcards.star}</span>
-                                                    <span>{productcards.star}</span>
-                                                    <span>{productcards.star}</span>
-                                                    <span>{productcards.star}</span>
+                                                 
+                                                    <Rating style={{fontSize:'20px'}}
+                                                        name="simple-controlled"
+                                                        value={value}
+                                                        onChange={(event, newValue) => {
+                                                            setValue(newValue);
+                                                        }}
+                                                    />
+                                                 
                                                 </div>
                                                 <br />
 
@@ -278,7 +164,7 @@ const ProductCards = () => {
 
 
 
-                
+
             </div>
         </Fragment>
     );
