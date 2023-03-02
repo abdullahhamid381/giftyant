@@ -16,6 +16,8 @@ import Table from './Table'
 
 
 const ProductCards = () => {
+
+    // FOR THE RATING
     const[value,setValue] = useState([])
 
 

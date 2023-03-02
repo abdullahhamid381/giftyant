@@ -1,6 +1,7 @@
 import React, { createContext, Fragment, useEffect, useReducer } from 'react'
 import { ProductGalleryDetail } from './Data'
 import ProductCards from './ProductCards'
+import ProductFilter from './ProductFilter'
 import { reducer } from './Reducer'
 
 
@@ -58,7 +59,9 @@ const ContextProducts = () => {
     return (
         <Fragment>
             <CardsProduct.Provider value={{ ...state, removeitem, clearcart, increment,decrement }}>
+              
                 <ProductCards />
+
             </CardsProduct.Provider>
         </Fragment>
     )
