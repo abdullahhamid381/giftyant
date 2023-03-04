@@ -158,7 +158,7 @@ const ProductCards = () => {
                             
                         >
                             <img src={'./images/basket.png'} alt="" style={{width:'100%' }} />
-                            <div><button style={{width:'100%',background:'red',color:'white',border:'none',borderRadius:'8px',padding:'20px 0'}}>Total Items <span>(0)</span></button></div>
+                            <div><button style={{width:'100%',background:'red',color:'white',border:'none',borderRadius:'8px',padding:'20px 0'}}>Total Amount <span>(0)</span></button></div>
                         </div>
                        
                     </div>
