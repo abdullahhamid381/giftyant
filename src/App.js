@@ -10,26 +10,43 @@ import ActionShop from './Components/ActionShop'
 import PopularGifts from './Components/PopularGifts'
 import Footer from './Components/Footer'
 import Blog from './Components/Blog'
+
+import ProductsFilter from './Components/ProductFilter'
+import { ProductGalleryDetail } from './Components/Data'
+import Moving from './Components/Moving'
+
+
 const App = () => {
+const {productitems}=ProductGalleryDetail;
   return (
     <Fragment>
       {/* */}
-     {/*  */}
-        {/*
+      {/*  */}
+      {/*
 <Navbar /> 
 <SubNavbar />
         
       
      */}
-     {/* 
+      {/* 
      <ActionShop/> */}
 
-<Slider />
-<Facility />
-<PopularGifts/>
-<ContextProducts/> 
-<Blog/>
-<Footer/>
+      <Slider />
+      <Facility />
+      <PopularGifts />
+
+
+<ProductCards/>
+    
+   
+      <Blog />
+      <Footer />
+
+
+
+
+
+
     </Fragment>
   )
 }

@@ -1,33 +1,20 @@
-import { Fragment, React, useState,useContext } from 'react'
+import { Fragment, React, useState } from 'react'
 import '../scss/ProductFilter.scss'
 import { ProductGalleryDetail } from './Data'
 import ProductCards from './ProductCards'
 
 import { AiOutlineSearch } from 'react-icons/ai'
 
+/*------------THIS MAP IS FOR THE CATAGEORY FILTER BUTTON ---------------------  */
+const uniqueList = [
+  ...new Set(ProductGalleryDetail.map((Productdatamap) => {
+    return Productdatamap.cata
+  }))]
 
 
-import { CardsProduct } from './ContextProducts'
+const ProductsFilter = () => {
 
-
-
-const ProductFilter = () => {
-
-
-
-
-  /*-----------THIS MAP IS FOR THE CATAGEORY FILTER BUTTON ---------------------  */
-
-  const uniqueList = [
-    ...new Set(iems.map((Productdatamap) => {
-      return Productdatamap.cata
-    }))]
-
-  //FOR THE MAP RUNNING IN THE PRODUCTSCARDS
-  const { items } = useContext(CardsProduct)
-
-  const [iems,setItems] = useState(items)
-
+  const [productdata,setProductdata]= useState(ProductGalleryDetail)
   const [search, setSearch] = useState(false)
 
 
@@ -40,10 +27,10 @@ const ProductFilter = () => {
 
   /*---------------- FOR FILTER THE PRODUCTS---------------------- */
   const filter = (cat) => {
-    const updatelist = iems.filter((Productdatamap) => {
+    const updatelist = productdata.filter((Productdatamap) => {
       return Productdatamap.cata == cat
     });
-    setItems(updatelist)
+    setProductdata(updatelist)
     console.log(updatelist)
   }
 
@@ -71,7 +58,7 @@ const ProductFilter = () => {
 
       {/* ---------------START HERE FILTER BUTTON SECTION----------------------------- */}
       <div className='filter-buttons' >
-        <button onClick={() => setItems(ProductGalleryDetail)}>All Products</button>
+        <button onClick={() => setProductdata(ProductGalleryDetail)}>All Products</button>
         {
           uniqueList.map((Productdatamap) => {
             return (
@@ -96,9 +83,10 @@ const ProductFilter = () => {
       </div>
       <div>
 
-     
+        <ProductCards productdata={productdata} searchTwo={searchTwo} SetsearchTwo={setSearchTwo} />
       </div>
     </div>
   )
 }
-export default ProductFilter
+
+export default ProductsFilter

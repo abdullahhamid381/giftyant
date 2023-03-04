@@ -7,6 +7,7 @@ import Navbar from '../Components/Navbar'
 import {Typography,Rating } from '@mui/material/'
 import { CardsProduct } from './ContextProducts'
 import Table from './Table'
+import { ProductGalleryDetail } from './Data';
 
 
 
@@ -16,25 +17,27 @@ import Table from './Table'
 
 
 const ProductCards = () => {
+     
+  
 
     // FOR THE RATING
     const[value,setValue] = useState([])
 
 
 
-    // IMPORTING CONTEXT API HERE
+    // // IMPORTING CONTEXT API HERE
 
-    //FOR THE MAP RUNNING IN THE PRODUCTSCARDS
-    const { items } = useContext(CardsProduct)
+    // //FOR THE MAP RUNNING IN THE PRODUCTSCARDS
+    // const { items } = useContext(CardsProduct)
 
-    //FOR THE REMOVE THE ITEMS IN THE PRODUCTSCARDS
-    const { removeitem } = useContext(CardsProduct)
+    // //FOR THE REMOVE THE ITEMS IN THE PRODUCTSCARDS
+    // const { removeitem } = useContext(CardsProduct)
 
-    // THIS USED FOR THE CLEAR THE CART
-    const { clearcart } = useContext(CardsProduct)
+    // // THIS USED FOR THE CLEAR THE CART
+    // const { clearcart } = useContext(CardsProduct)
 
-    const { increment } = useContext(CardsProduct)
-    const { decrement } = useContext(CardsProduct)
+    // const { increment } = useContext(CardsProduct)
+    // const { decrement } = useContext(CardsProduct)
 
 
 
@@ -67,12 +70,12 @@ const ProductCards = () => {
 
 
                         {
-                            items.map((productcards, index) => {
+                            ProductGalleryDetail.map((productcards) => {
                                 const { id, quantity } = productcards;
                                 return (
 
-                                    <div className='cards-parent' draggable
-                                        onDragStart={(event) => handleDragStart(event, productcards)} title={'Drop In To The Basket'} style={{ cursor: 'pointer' }}>
+                                    <div className='cards-parent'  draggable
+                                        onDragStart={(event) => handleDragStart(event, productcards)} title={'Drop In To The Basket'} style={{ cursor: 'pointer' }} >
 
                                         <div className='card-gallery'>
                                             <img
@@ -151,10 +154,13 @@ const ProductCards = () => {
                         <div
 
                             onDragOver={handleDragOver}
-                            onDrop={handleDrop}
+                            onDrop={handleDrop} style={{width:'80%',margin:'auto'}}
+                            
                         >
-                            <img src={'./images/basket.png'} alt="" style={{ padding: '50px 0 0 90px' }} />
+                            <img src={'./images/basket.png'} alt="" style={{width:'100%' }} />
+                            <div><button style={{width:'100%',background:'red',color:'white',border:'none',borderRadius:'8px',padding:'20px 0'}}>Total Items <span>(0)</span></button></div>
                         </div>
+                       
                     </div>
                 </div>
 
