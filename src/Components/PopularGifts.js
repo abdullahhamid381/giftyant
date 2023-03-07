@@ -17,7 +17,7 @@ const PopularGifts = () => {
 
                <center>
                <div className='conact'>
-                    <img src={'./images/final/5.jpg'} alt="" />
+                    <img src={'./images/final/5.jpg'} alt=""  style={{width:'80%',borderRadius:'10px'}}/>
                     <div className='contact-call'>
                         <p>Call for the support</p>
                         <h1>084 - 1900 - 1994</h1>

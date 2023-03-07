@@ -29,7 +29,7 @@ export default function Slider() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src={'./images/final/1.png'} style={{cursor:'pointer'}}/>
+          <img src={'./images/final/1.png'} style={{cursor:'pointer',width:'100%'}}/>
           
         </SwiperSlide>
         {/* <SwiperSlide>

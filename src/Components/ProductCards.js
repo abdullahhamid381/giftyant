@@ -8,6 +8,7 @@ import {Typography,Rating } from '@mui/material/'
 import { CardsProduct } from './ContextProducts'
 import Table from './Table'
 import { ProductGalleryDetail } from './Data';
+import { Link } from 'react-router-dom';
 
 
 
@@ -74,7 +75,7 @@ const ProductCards = () => {
                                 const { id, quantity } = productcards;
                                 return (
 
-                                    <div className='cards-parent'  draggable
+                                    <div className='cards-parent'   draggable
                                         onDragStart={(event) => handleDragStart(event, productcards)} title={'Drop In To The Basket'} style={{ cursor: 'pointer' }} >
 
                                         <div className='card-gallery'>
@@ -158,7 +159,11 @@ const ProductCards = () => {
                             
                         >
                             <img src={'./images/basket.png'} alt="" style={{width:'100%' }} />
-                            <div><button style={{width:'100%',background:'red',color:'white',border:'none',borderRadius:'8px',padding:'20px 0'}}>Total Amount <span>(0)</span></button></div>
+                            <div>
+                                <Link to='/cart' className='cart'>
+                                    <button style={{width:'100%',background:'red',color:'white',border:'none',borderRadius:'8px',padding:'20px 0'}}>Total Amount <span>(0)</span></button>
+                                </Link>
+                            </div>
                         </div>
                        
                     </div>

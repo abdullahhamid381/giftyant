@@ -1,14 +1,28 @@
+@import './media.scss';
+
 .facility-grid{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     place-items: center;
-  
+    width: 100%;
+   
+  @include lg{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
     .facility-item{
         display: flex;
         align-items: center;
-        padding: 20px 90px;
         background: #82B6BD;
         border-left: 1px solid white;
+        height: 120px;
+        width: 100%; 
+        padding: 0 20px;
+    @include lg{
+        border-bottom: 1px solid white;
+    padding: 20px 10px;
+    height: 75px;
+    }
        
         
         .icons{
@@ -16,16 +30,27 @@
             padding-right: 20px;
             color: white;
             padding-top: 10px;
+            @include lg{
+                font-size: 30px;
+            padding-right: 10px;
+            }
         }
         h6{
             font-size: 15px;
             color: white;
+            @include lg{
+                font-size: 12px;
+            }
            
         }
         p{
             color: #A6A6A6;
             padding: 5px 0 0 0;
-            color: whitesmoke;
+
+            color: whitesmoke; 
+            @include lg{
+                font-size: 10px;
+            }
         }
     }
 }

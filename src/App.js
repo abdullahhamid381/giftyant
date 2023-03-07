@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import Navbar from './Components/Navbar'
 import SubNavbar from './Components/SubNavbar'
 import Slider from './Reuseable/Slider'
@@ -14,10 +14,13 @@ import Blog from './Components/Blog'
 import ProductsFilter from './Components/ProductFilter'
 import { ProductGalleryDetail } from './Components/Data'
 import Moving from './Components/Moving'
+import { Routes, Route } from 'react-router-dom'
+import Cart from './Components/Cart'
 
 
 const App = () => {
-const {productitems}=ProductGalleryDetail;
+  const { productitems } = ProductGalleryDetail;
+  const { cartItems, setCartItems } = useState([]);
   return (
     <Fragment>
       {/* */}
@@ -36,9 +39,19 @@ const {productitems}=ProductGalleryDetail;
       <PopularGifts />
 
 
-<ProductCards/>
-    
-   
+
+
+      <Routes>
+        <Route path='/' element={<ProductCards productitems={productitems} />} />
+        <Route path='/cart' element={<Cart />} />
+
+
+
+
+
+      </Routes>
+
+
       <Blog />
       <Footer />
 
