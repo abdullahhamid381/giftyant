@@ -1,185 +1,137 @@
-import React, { Fragment, useContext, useEffect, useState } from 'react'
-
-import { AiOutlineHeart, AiOutlineEye, AiOutlinePlus, AiOutlineMinus, AiOutlineShoppingCart } from 'react-icons/ai'
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import '../scss/ProductsCards.scss';
-import Navbar from '../Components/Navbar'
-import {Typography,Rating } from '@mui/material/'
-import { CardsProduct } from './ContextProducts'
-import Table from './Table'
-import { ProductGalleryDetail } from './Data';
+import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
+import '../scss/ProductsCards.scss'
+import {ImCross} from 'react-icons/im'
+import { Typography, Rating } from '@mui/material/'
+function App() {
+  const MAX_CART_ITEMS = 5;
+  const MAX_PRODUCT_LIMIT = 5;
+  const [items, setItems] = useState([
+    { name: 'Watches', price: 315.00, quantity: `(0)`, image: './images/final/6.png' },
+    { name: 'Jewelery', price: 2.99, quantity:` (0)`,image: './images/final/7.png' },
+    { name: 'Perfume', price: 1.49, quantity:` (0)`, image: './images/final/8.png', },
+    { name: 'Bags', price: 1.49, quantity: `(0)`, image: './images/final/9.png', },
+    { name: 'Watches', price: 315.00, quantity: `(0)`, image: './images/final/6.png' },
+    { name: 'Jewelery', price: 2.99, quantity: `(0)`, image: './images/final/7.png' },
+    { name: 'Perfume', price: 1.49, quantity: `(0)`, image: './images/final/8.png', },
+    { name: 'Bags', price: 1.49, quantity: `(0)`, image: './images/final/9.png', },
+  ]);
+  // FOR THE RATING
+  const [value, setValue] = useState([])
+  const [cartItems, setCartItems] = useState([]);
+
+  const handleDragStart = (e, item) => {
+    e.dataTransfer.setData('item', JSON.stringify(item));
+  };
 
 
+  const handleDrop = (e) => {
+    e.preventDefault();
+    const item = JSON.parse(e.dataTransfer.getData('item'));
+    const cartItem = cartItems.find((i) => i.name === item.name);
 
+    if (cartItems.length >= MAX_CART_ITEMS) {
+      alert(`You can only add up to ${MAX_CART_ITEMS} items to the cart.`);
+    } else if (cartItem) {
+      if (cartItem.quantity >= MAX_PRODUCT_LIMIT) {
+        alert(`You can only add up to ${MAX_PRODUCT_LIMIT} of the ${cartItem.name} item.`);
+      } else {
+        const updatedCartItems = cartItems.map((i) =>
+          i.name === cartItem.name ? { ...i, quantity: i.quantity + 1 } : i
+        );
+        setCartItems(updatedCartItems);
+      }
+    } else {
+      setCartItems([...cartItems, { ...item, quantity: 1 }]);
+    }
+  };
 
+  const handleDragOver = (e) => {
+    e.preventDefault();
+  };
 
-
-
-
-const ProductCards = () => {
-     
-  
-
-    // FOR THE RATING
-    const[value,setValue] = useState([])
-
-
-
-    // // IMPORTING CONTEXT API HERE
-
-    // //FOR THE MAP RUNNING IN THE PRODUCTSCARDS
-    // const { items } = useContext(CardsProduct)
-
-    // //FOR THE REMOVE THE ITEMS IN THE PRODUCTSCARDS
-    // const { removeitem } = useContext(CardsProduct)
-
-    // // THIS USED FOR THE CLEAR THE CART
-    // const { clearcart } = useContext(CardsProduct)
-
-    // const { increment } = useContext(CardsProduct)
-    // const { decrement } = useContext(CardsProduct)
-
-
-
-    // DRAG AND DROP START HERE
-
-    const [droppedProducts, setDroppedProducts] = useState([]);
-
-    const handleDragStart = (event, product) => {
-        event.dataTransfer.setData('product', JSON.stringify(product));
-    };
-
-    const handleDragOver = (event) => {
-        event.preventDefault();
-    };
-
-    const handleDrop = (event) => {
-        event.preventDefault();
-        const product = JSON.parse(event.dataTransfer.getData('product'));
-        setDroppedProducts([...droppedProducts, product]);
-    };
-
-    return (
-        <Fragment>
-
-            <div className="">
-                <center><h1 style={{ padding: '100px 0 0 0', color: '#444' }}>SALES PRODUCTS</h1></center>
-                <div className='card-basket-parent'>
-
-                    <div className="product-card-grid">
-
-
-                        {
-                            ProductGalleryDetail.map((productcards) => {
-                                const { id, quantity } = productcards;
-                                return (
-
-                                    <div className='cards-parent'   draggable
-                                        onDragStart={(event) => handleDragStart(event, productcards)} title={'Drop In To The Basket'} style={{ cursor: 'pointer' }} >
-
-                                        <div className='card-gallery'>
-                                            <img
-                                                key={productcards.id}
-                                                src={productcards.img}
-                                                alt={productcards.name}
-
-                                            />
-                                        </div>
-                                        <div className='card-detail'>
-                                            <center>
-                                                <h3>{productcards.title}</h3>
-                                                {/* <p className='gender'>{productcards.gender}</p> */}
-                                                <div className='price-parent'>
-                                                    <del className='discount'> {productcards.discount} </del>
-                                                    <span className='price'> {productcards.Price} </span>
-                                                </div>
-
-                                                <div className='stars'>
-                                                 
-                                                    <Rating style={{fontSize:'20px'}}
-                                                        name="simple-controlled"
-                                                        value={value}
-                                                        onChange={(event, newValue) => {
-                                                            setValue(newValue);
-                                                        }}
-                                                    />
-                                                 
-                                                </div>
-                                                <br />
-
-                                            </center>
-                                        </div>
-                                        {/* <div className='button-flex'>
-                                        <button className='add-to-cart'><AiOutlineShoppingCart /></button>
-                                        <button className='heart' onClick={() => increment(id)}><AiOutlinePlus /></button>
-                                        <input type="text" placeholder={quantity} className="increment" />
-                                        <button className='heart' onClick={() => decrement(id)}><AiOutlineMinus /></button>
-                                        <button className='heart' onClick={() => removeitem(id)}>Remove</button>
-    
-                                    </div> */}
-                                    </div>
-
-
-
-                                )
-
-                            })
-                        }
-
-
-
-
-
-
-
-                        {/* <div>
-                        <button>Checkout</button>
-                        <button onClick={() => clearcart()}>Clear All</button>
-                    </div> */}
-
-
-                    </div>
-                    <div>
-                        <table>
-                            <tbody>
-                                <tr style={{ display: 'flex', flexWrap: 'wrap' }}>
-                                    {droppedProducts.map((productcards) => (
-                                        <td key={productcards.id} style={{ border: '1px solid rgba(128, 128, 128, 0.247)', marginLeft: '10px' }}>
-                                            <img src={productcards.img} alt={productcards.name} style={{ width: '50px' }} />
-                                        </td>
-                                    ))}
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div
-
-                            onDragOver={handleDragOver}
-                            onDrop={handleDrop} style={{width:'80%',margin:'auto'}}
-                            
-                        >
-                            <img src={'./images/basket.png'} alt="" style={{width:'100%' }} />
-                            <div>
-                                <Link to='/cart' className='cart'>
-                                    <button style={{width:'100%',background:'red',color:'white',border:'none',borderRadius:'8px',padding:'20px 0'}}>Total Amount <span>(0)</span></button>
-                                </Link>
-                            </div>
-                        </div>
-                       
-                    </div>
-                </div>
-
-
-
-
-
-
-
-
-
-
-            </div>
-        </Fragment>
+  const handleIncrement = (item) => {
+    const updatedCartItems = cartItems.map((i) =>
+      i.name === item.name ? { ...i, quantity: i.quantity + 1 } : i
     );
-};
-export default ProductCards
+    setCartItems(updatedCartItems);
+  };
+
+  const handleDecrement = (item) => {
+    const updatedCartItems = cartItems.map((i) =>
+      i.name === item.name ? { ...i, quantity: i.quantity - 1 } : i
+    );
+    setCartItems(updatedCartItems.filter((i) => i.quantity > 0));
+  };
+
+  const getTotalPrice = () => {
+    return cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  };
+
+  return (
+    <Fragment>
+      <center><h1 style={{ padding: '100px 0 0 0', color: '#444' }}>SALES PRODUCTS</h1></center>
+      <div className="App">
+
+        <div className="items">
+          {items.map((item) => (
+            <div title='Drop to the basket'
+              key={item.name}
+              className="item"
+              draggable
+              onDragStart={(e) => handleDragStart(e, item)}
+            >
+              <div>
+              <img src={item.image} alt={item.name} style={{ width: '100%' }} />
+              </div>
+              <p style={{ fontWeight: 'bolder', marginTop: '20px' }}>{item.name}</p>
+              <p style={{ paddingTop: '10px', fontWeight: 'bolder', color: 'red', fontSize: '18px' }}>{`$${item.price}`}</p>
+              <div className='stars' style={{ margin: '10px 0 0 0', }}>
+
+                <Rating style={{ fontSize: '18px' }}
+                  name="simple-controlled"
+                  value={value}
+                  onChange={(event, newValue) => {
+                    setValue(newValue);
+                  }}
+                />
+
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="cart" style={{ position: 'relative' }} onDrop={handleDrop} onDragOver={handleDragOver}>
+          <img src={'./images/basket.png'} alt="" />
+          <div className="cart-items" >
+            {cartItems.map((item) => (
+              <div key={item.name} className="cart-item">
+                <img src={item.image} alt={item.name} style={{ position: 'absolute', top: '70px', width: '30%', left: '120px' }} />
+                <div style={{ position: 'relative', display: 'grid', placeItems: 'center' }}>
+                  <img src={item.image} alt={item.name} />
+
+
+                  <p style={{ fontWeight: 'bolder' }}>{item.name}</p>
+                  <div className="quantity">
+                    <button onClick={() => handleDecrement(item)} className="increment" style={{ position: 'absolute', top: '20px', left: '95px' }}><ImCross/></button>
+
+                    {/* <button onClick={() => handleIncrement(item)} className="increment">+</button> */}
+                  </div>
+                  <p style={{marginTop:'10px'}}>{`$${item.price * item.quantity}`}</p>
+                  <p style={{marginTop:'5px'}}>{item.quantity}</p>
+                  
+                  </div>
+
+
+              </div>
+            ))}
+          </div>
+          <Link to='/cart' style={{ textDecoration: 'none' }}>
+            <center> <div className="total-price">{`Total: $${getTotalPrice()} (Proceed To Checkout)`}</div></center>
+          </Link>
+        </div>
+      </div>
+    </Fragment>
+  );
+}
+
+export default App

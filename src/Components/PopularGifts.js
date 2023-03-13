@@ -9,7 +9,7 @@ const PopularGifts = () => {
                         <img src={'./images/final/1.jpg'} alt="" className='product-gift-img' />
                         <img src={'./images/final/3.jpg'} alt="" className='product-gift-img' />
                     </div>
-                    <div>
+                    <div style={{overflow:'hidden',boxSizing:'border-box'}}>
                         <img src={'./images/final/2.jpg'} alt="" className='product-gift-img' />
                         <img src={'./images/final/4.jpg'} alt="" className='product-gift-img' />
                     </div>

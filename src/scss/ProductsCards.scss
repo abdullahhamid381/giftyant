@@ -1,131 +1,73 @@
-.card-basket-parent {
+.App {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 90%;
+    grid-template-columns: 2fr 1fr;
+    width: 80%;
+    gap: 150px;
+    padding: 80px 0;
     margin: auto;
-    gap: 20px;
-    padding: 100px 0 0 0;
-    place-items: center;
 
-    .product-card-grid {
-
+    .items {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        width: 100%;
+        cursor: pointer;
+        gap: 50px 50px;
+        place-items: center;
 
-
-
-        [data-rbd-droppable-context-id="0"] {
-            overflow-anchor: none;
+        .item {
+            cursor: pointer;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            width: 80%;
-            margin: auto;
             place-items: center;
-            padding: 120px 0;
+
+            img{
+                border: 1px solid rgba(128, 128, 128, 0.184);
+            }
+        }
+    }
+
+    .cart {
+        img {
+            width: 100%;
         }
 
-        .cards-parent {
-            width: 80%;
-            padding: 5px;
-            /* border: 1px solid #62d2a2; */
-            border-radius: 5px;
-            // box-shadow: 0px 0px 7px -3px black;
-       
-            position: relative;
+        .cart-items {
 
-            .card-gallery {
-                img {
-                    width: 100%;
-                    border: 1px solid rgba(128, 128, 128, 0.247);
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            place-items: center;
+
+            .cart-item {
+                display: grid;
+                place-items: center;
+                p{
+                    font-weight: bolder  !important;
                 }
-               
-            }
+                .quantity {
 
-            .card-detail {
-                font-family: 'Raleway', sans-serif;
+                    display: flex;
 
-                h3 {
-
-                    font-family: 'Raleway', sans-serif;
-                    padding: 10px 0;
-                    font-size: 16px;
-                }
-
-                .gender {
-                    font-family: 'Raleway', sans-serif;
-                    font-weight: 400;
-                }
-
-                .price-parent {
-                    padding: 10px;
-
-                    .price {
-                        color: red;
-                        font-weight: bolder;
-                        padding-left: 5px;
-                    }
-                }
-
-                .stars {
-                    padding-top: 10px;
-                    color: red;
-                }
-
-
-             
-
-            }
-            .button-flex {
-                display: flex;
-                flex-direction: column;
-                gap: 5px;
-                justify-content: center;
-                position: absolute;
-                top: 0;
-                left: -200%;
-
-                
-
-                .add-to-cart {
-                    width: 30%;
-
-                    font-size: 15px;
-                    background: none;
-                    border: none;
-                    background: #62d2a2;
-                    font-family: 'Raleway', sans-serif;
-                    padding: 10px 0;
-                    color: white;
-                    font-weight: bolder;
-                }
-
-                .heart {
-
-                    width: 30%;
-                    border: none;
-                    background: #62d2a2 !important;
-                    font-family: 'Raleway', sans-serif;
-                    padding: 10px 0;
-                    color: white;
-                    font-weight: bolder;
-
-                    background: none;
-                    font-size: 15px;
                 }
 
                 .increment {
-                    width: 30%;
-                    text-align: center;
-                    padding: 10px 0;
-                    background: #62d2a2;
-                    outline: none;
+                  
+                    background: red;
                     border: none;
-                    color: white !important;
-                    font-size: 15px;
+                    color: white;
+                    border-radius: 80px;
+                    font-size: 10px;
+                    width: 20px;
+                    height: 20px;
+
                 }
             }
+       
         }
+    }
+
+    .total-price {
+margin: 20px;
+        background: red;
+        padding: 10px 0;
+        color: white;
+        border-radius: 8px;
     }
 }
