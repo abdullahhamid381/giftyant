@@ -1,5 +1,8 @@
 import React, { Fragment } from 'react'
 import '../scss/Footer.scss'
+import {FaFacebook,FaLinkedinIn} from 'react-icons/fa'
+import {BsInstagram} from 'react-icons/bs'
+import {AiOutlineTwitter} from 'react-icons/ai'
 const Footer = () => {
   return (
     <Fragment>
@@ -37,10 +40,10 @@ const Footer = () => {
             <div className="footer-col">
               <h4>follow us</h4>
               <div className="social-links">
-                <a href="#"><i className="fab fa-facebook-f" /></a>
-                <a href="#"><i className="fab fa-twitter" /></a>
-                <a href="#"><i className="fab fa-instagram" /></a>
-                <a href="#"><i className="fab fa-linkedin-in" /></a>
+                <a href="#"><FaFacebook/></a>
+                <a href="#"><BsInstagram/></a>
+                <a href="#"><FaLinkedinIn/></a>
+                <a href="#"><AiOutlineTwitter/></a>
               </div>
             </div>
           </div>

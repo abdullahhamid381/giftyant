@@ -7,14 +7,14 @@ function App() {
   const MAX_CART_ITEMS = 5;
   const MAX_PRODUCT_LIMIT = 5;
   const [items, setItems] = useState([
-    { name: 'Watches', price: 315.00, quantity: `(0)`, image: './images/final/6.png' },
-    { name: 'Jewelery', price: 2.99, quantity:` (0)`,image: './images/final/7.png' },
-    { name: 'Perfume', price: 1.49, quantity:` (0)`, image: './images/final/8.png', },
-    { name: 'Bags', price: 1.49, quantity: `(0)`, image: './images/final/9.png', },
-    { name: 'Watches', price: 315.00, quantity: `(0)`, image: './images/final/6.png' },
-    { name: 'Jewelery', price: 2.99, quantity: `(0)`, image: './images/final/7.png' },
-    { name: 'Perfume', price: 1.49, quantity: `(0)`, image: './images/final/8.png', },
-    { name: 'Bags', price: 1.49, quantity: `(0)`, image: './images/final/9.png', },
+    { name: 'Watches', price: 400, quantity: `(0)`, image: './images/final/6.png' },
+    { name: 'Jewelery', price: 200 , quantity:` (0)`,image: './images/final/7.png' },
+    { name: 'Perfume', price: 100, quantity:` (0)`, image: './images/final/8.png', },
+    { name: 'Bags', price: 600, quantity: `(0)`, image: './images/final/9.png', },
+    { name: 'Watches', price: 800, quantity: `(0)`, image: './images/final/6.png' },
+    { name: 'Jewelery', price: 700, quantity: `(0)`, image: './images/final/7.png' },
+    { name: 'Perfume', price: 500, quantity: `(0)`, image: './images/final/8.png', },
+    { name: 'Bags', price: 750, quantity: `(0)`, image: './images/final/9.png', },
   ]);
   // FOR THE RATING
   const [value, setValue] = useState([])
@@ -85,7 +85,7 @@ function App() {
               <img src={item.image} alt={item.name} style={{ width: '100%' }} />
               </div>
               <p style={{ fontWeight: 'bolder', marginTop: '20px' }}>{item.name}</p>
-              <p style={{ paddingTop: '10px', fontWeight: 'bolder', color: 'red', fontSize: '18px' }}>{`$${item.price}`}</p>
+              <p style={{ paddingTop: '10px', fontWeight: 'bolder', color: 'red', fontSize: '18px' }}>{`PKR ${item.price}`}</p>
               <div className='stars' style={{ margin: '10px 0 0 0', }}>
 
                 <Rating style={{ fontSize: '18px' }}
@@ -116,7 +116,7 @@ function App() {
 
                     {/* <button onClick={() => handleIncrement(item)} className="increment">+</button> */}
                   </div>
-                  <p style={{marginTop:'10px'}}>{`$${item.price * item.quantity}`}</p>
+                  <p style={{marginTop:'10px'}}>{`PKR ${item.price * item.quantity}`}</p>
                   <p style={{marginTop:'5px'}}>{item.quantity}</p>
                   
                   </div>
@@ -126,7 +126,7 @@ function App() {
             ))}
           </div>
           <Link to='/cart' style={{ textDecoration: 'none' }}>
-            <center> <div className="total-price">{`Total: $${getTotalPrice()} (Proceed To Checkout)`}</div></center>
+            <center> <div className="total-price">{`Total: PKR ${getTotalPrice()} (Proceed To Checkout)`}</div></center>
           </Link>
         </div>
       </div>
