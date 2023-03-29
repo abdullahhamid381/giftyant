@@ -16,6 +16,7 @@ import { ProductGalleryDetail } from './Components/Data'
 import Moving from './Components/Moving'
 import { Routes, Route } from 'react-router-dom'
 import Cart from './Components/Cart'
+import Pakageproduct from './Components/Pakageproduct'
 
 
 const App = () => {
@@ -50,7 +51,7 @@ const App = () => {
 
 
       </Routes>
-
+<Pakageproduct/>
 
       <Blog />
       <Footer />
