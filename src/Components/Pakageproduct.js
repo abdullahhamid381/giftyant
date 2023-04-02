@@ -19,7 +19,7 @@ const Pakageproduct = () => {
     return (
         <Fragment>
 
-            <center><h1 style={{ padding: '60px 0 100px 0', color: '#444' }}>PACKAGE PRODUCT</h1></center>
+            <center><h1 style={{ padding: '60px 0 100px 0', color: '#444' }}>PACKAGED PRODUCT</h1></center>
 
             <div style={{width:'80%',margin:'auto',display:'grid',gridTemplateColumns:'1fr 1fr 1fr 1fr',justifyContent:"center",gap:'40px'}}>
             {items.map((item) => (

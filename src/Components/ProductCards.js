@@ -82,7 +82,7 @@ function App() {
               onDragStart={(e) => handleDragStart(e, item)}
             >
               <div>
-              <img src={item.image} alt={item.name} style={{ width: '100%' }} />
+              <img src={item.image} alt={item.name} style={{ width: '120%' }} />
               </div>
               <p style={{ fontWeight: 'bolder', marginTop: '20px' }}>{item.name}</p>
               <p style={{ paddingTop: '10px', fontWeight: 'bolder', color: 'red', fontSize: '18px' }}>{`PKR ${item.price}`}</p>
