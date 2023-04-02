@@ -36,6 +36,31 @@
             place-items: center;
 
             .cart-item {
+                .productfirst{
+                   position: absolute;
+                   top: 90px; 
+                   width: 30%;
+                   left: 120px;
+                }
+                .productsecond{
+                   position: absolute;
+                   top: 90px; 
+                   width: 30%;
+                   left: 40px;
+                }
+                .productthird{
+                   position: absolute;
+                   top: 90px; 
+                   width: 30%;
+                   left: 180px;
+                   transform: rotate(90deg);
+                }
+                .productfourth{
+                   position: absolute;
+                   top: 70px; 
+                   width: 30%;
+                   left: 120px;
+                }
                 display: grid;
                 place-items: center;
                 p{

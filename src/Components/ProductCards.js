@@ -7,14 +7,14 @@ function App() {
   const MAX_CART_ITEMS = 5;
   const MAX_PRODUCT_LIMIT = 5;
   const [items, setItems] = useState([
-    { name: 'Watches', price: 400, quantity: `(0)`, image: './images/final/6.png' },
-    { name: 'Jewelery', price: 200 , quantity:` (0)`,image: './images/final/7.png' },
-    { name: 'Perfume', price: 100, quantity:` (0)`, image: './images/final/8.png', },
-    { name: 'Bags', price: 600, quantity: `(0)`, image: './images/final/9.png', },
-    { name: 'Watches', price: 800, quantity: `(0)`, image: './images/final/6.png' },
-    { name: 'Jewelery', price: 700, quantity: `(0)`, image: './images/final/7.png' },
-    { name: 'Perfume', price: 500, quantity: `(0)`, image: './images/final/8.png', },
-    { name: 'Bags', price: 750, quantity: `(0)`, image: './images/final/9.png', },
+    { name: 'Watches', price: 400, quantity: `(0)`, image: './images/final/6.png',class:'productfirst' },
+    { name: 'Jewelery', price: 200 , quantity:` (0)`,image: './images/final/7.png', class:'productsecond'},
+    { name: 'Perfume', price: 100, quantity:` (0)`, image: './images/final/8.png',class:'productthird' },
+    { name: 'Bags', price: 600, quantity: `(0)`, image: './images/final/9.png',class:'productfourth' },
+    { name: 'Watches', price: 400, quantity: `(0)`, image: './images/final/6.png',class:'productfirst' },
+    { name: 'Jewelery', price: 200 , quantity:` (0)`,image: './images/final/7.png', class:'productsecond'},
+    { name: 'Perfume', price: 100, quantity:` (0)`, image: './images/final/8.png',class:'productthird' },
+    { name: 'Bags', price: 600, quantity: `(0)`, image: './images/final/9.png',class:'productfourth' },
   ]);
   // FOR THE RATING
   const [value, setValue] = useState([])
@@ -105,7 +105,7 @@ function App() {
           <div className="cart-items" >
             {cartItems.map((item) => (
               <div key={item.name} className="cart-item">
-                <img src={item.image} alt={item.name} style={{ position: 'absolute', top: '70px', width: '30%', left: '120px' }} />
+                <img src={item.image} alt={item.name} className={item.class} />
                 <div style={{ position: 'relative', display: 'grid', placeItems: 'center' }}>
                   <img src={item.image} alt={item.name} />
 
